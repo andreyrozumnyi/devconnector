@@ -2,9 +2,9 @@ const express = require('express');
 const router = express.Router();
 const config = require('config');
 const request = require('request');
-const { check, validationResult } = require('express-validator');
 
 const auth = require('../../middleware/auth');
+const validateShema = require('../../middleware/validate-schema');
 
 const Profile = require('../../models/Profile');
 const User = require('../../models/User');
@@ -48,12 +48,8 @@ router.post(
                 .isEmpty(),
         ],
     ],
+    validateShema,
     async (req, res) => {
-        const errors = validationResult(req);
-        if (!errors.isEmpty()) {
-            return res.status(400).json({ errors: errors.array() });
-        }
-
         const {
             company,
             website,
@@ -180,12 +176,8 @@ router.put(
                 .isEmpty(),
         ],
     ],
+    validateShema,
     async (req, res) => {
-        const errors = validationResult(req);
-        if (!errors.isEmpty()) {
-            return res.status(400).json({ errors: errors.array() });
-        }
-
         const {
             title,
             company,
@@ -262,12 +254,8 @@ router.put(
                 .isEmpty(),
         ],
     ],
+    validateShema,
     async (req, res) => {
-        const errors = validationResult(req);
-        if (!errors.isEmpty()) {
-            return res.status(400).json({ errors: errors.array() });
-        }
-
         const {
             school,
             degree,
