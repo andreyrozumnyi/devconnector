@@ -5,6 +5,8 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const config = require('config');
 
+const validateSchema = require('../../middleware/validate-schema');
+
 const User = require('../../models/User');
 
 const router = express.Router();
@@ -24,12 +26,8 @@ router.post(
             'Please enter password minimum with 6 characters'
         ).isLength({ min: 6 }),
     ],
+    validateSchema,
     async (req, res) => {
-        const errors = validationResult(req);
-        if (!errors.isEmpty()) {
-            return res.status(400).json({ errors: errors.array() });
-        }
-
         const { name, email, password } = req.body;
 
         try {
