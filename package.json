@@ -24,18 +24,18 @@
     "homepage": "https://github.com/andreyrozumnyi/devconnector#readme",
     "dependencies": {
         "bcryptjs": "2.4.3",
-        "config": "3.2.2",
+        "config": "3.2.4",
         "express": "4.17.1",
-        "express-validator": "6.1.1",
+        "express-validator": "6.3.0",
         "gravatar": "1.8.0",
         "jsonwebtoken": "8.5.1",
-        "mongoose": "5.6.10",
+        "mongoose": "5.7.12",
         "request": "2.88.0"
     },
     "devDependencies": {
-        "concurrently": "4.1.2",
-        "eslint": "5.16.0",
-        "eslint-plugin-react-hooks": "2.0.1",
-        "nodemon": "1.19.1"
+        "concurrently": "5.0.0",
+        "eslint": "6.7.1",
+        "eslint-plugin-react-hooks": "2.3.0",
+        "nodemon": "2.0.1"
     }
 }
