@@ -11,6 +11,7 @@ import EditProfile from './components/profile-forms/EditProfile';
 import PrivateRoute from './components/routing/PrivateRoute';
 import AddEducation from './components/profile-forms/AddEducation';
 import AddExperience from './components/profile-forms/AddExperience';
+import Profiles from './components/profiles/Profiles';
 
 import setAuthToken from './utils/setAuthToken';
 // Redux
@@ -44,6 +45,11 @@ const App = () => {
                                 component={Register}
                             />
                             <Route exact path='/login' component={Login} />
+                            <Route
+                                exact
+                                path='/profiles'
+                                component={Profiles}
+                            />
                             <PrivateRoute
                                 exact
                                 path='/dashboard'
